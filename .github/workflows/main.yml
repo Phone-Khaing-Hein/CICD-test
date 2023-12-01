@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -21,9 +21,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Create Build Directory
-        run: mkdir build
-
       - name: Build React App
         run: npm run build
 
@@ -37,3 +34,4 @@ jobs:
         with:
           branch: gh-pages
           folder: build
+          CLEAN: true
