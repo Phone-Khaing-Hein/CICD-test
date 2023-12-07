@@ -24,6 +24,13 @@ jobs:
       - name: Build React app
         run: npm run build
 
+      - name: Debug Git
+        run: |
+          git --version
+          git remote -v
+          git branch -a
+          git log -3
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
