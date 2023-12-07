@@ -13,7 +13,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
+      - name: Print Environment
+        run: |
+          env
+
+      - name: Print GitHub Token
+        run: echo ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "pkh2662003@gmail.com"
+          git config --global user.name "Phone-Khaing-Hein"
+
+      - name: Print Repository URL
+        run: git remote -v
+
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 14
@@ -30,6 +45,12 @@ jobs:
           git remote -v
           git branch -a
           git log -3
+
+      - name: Debug SSH
+        run: |
+          ls -la ~/.ssh
+          cat ~/.ssh/config
+          cat ~/.ssh/known_hosts
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v4
