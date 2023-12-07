@@ -46,12 +46,6 @@ jobs:
           git branch -a
           git log -3
 
-      - name: Debug SSH
-        run: |
-          ls -la ~/.ssh
-          cat ~/.ssh/config
-          cat ~/.ssh/known_hosts
-
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
