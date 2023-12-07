@@ -39,5 +39,5 @@ jobs:
         run: |
           git config --global user.name Phone-Khaing-Hein
           git config --global user.email pkh2662003@gmail.com
-          git remote set-url origin `https://secrets.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@github.com/CICD-test`
+          git remote set-url origin https://phone-khaing-hein.github.io/CICD-test/
           npm run deploy
